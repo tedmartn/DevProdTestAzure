@@ -4,12 +4,30 @@
 # 
 # This Terraform configuration will create the following:
 #
-# This will create a App/Test/Prod Resource groups with a segregated VNETS/Subnets.
-# App/Test/Prod Application Servers, IIS Web Servers, SQL PaaS DB, Windows RDS Servers, Azure ADDS for access management.
+# This will create a Dev/Test/Prod Resource groups with a segregated VNETS/Subnets.
+# Dev/Test/Prod Application Servers, IIS Web Servers, SQL PaaS DB, Windows RDS Servers, Azure ADDS for access management.
 # Azure VPN Gateway set-up only on production environment.
 # Tags are placed dependent upon specific environment.
 # All Variables are pulled from Variables.tf
+# Provisioned resources use the following naming convention [REGION-DEV/TEST/PROD-RESOURCETYPE(numeric value)] for example USNC-DEV-DB1 
+#                                                           
 
 
 
-# Resource Group Resource
+# Resource Group Creation
+resource "azurerm_resource_group" "usnc-dev-rg" {
+    name = "usnc-dev-rg"
+    location = "North Central US"
+}
+resource "azurerm_resource_group" "usnc-test-rg" {
+    name = "usnc-test-rg"
+    location = "North Central US"
+}
+resource "azurerm_resource_group" "usnc-prod-rg" {
+    name = "usnc-prod-rg"
+    location = "North Central US"
+}
+
+resource "azurerm_" "name" {
+  
+}
